@@ -24,7 +24,7 @@ public class BankAccount {
      *
      * @param amount Montant à déposer
      */
-    public void deposit(double amount) {
+    public synchronized void deposit(double amount) {
         if (amount <= 0) {
             throw new IllegalArgumentException("Le montant doit être positif");
         }
@@ -37,7 +37,7 @@ public class BankAccount {
      *
      * @param amount Montant à retirer
      */
-    public void withdraw(double amount) {
+    public synchronized void withdraw(double amount) {
         if (amount <= 0) {
             throw new IllegalArgumentException("Le montant doit être positif");
         }
